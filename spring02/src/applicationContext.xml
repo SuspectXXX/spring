@@ -8,4 +8,9 @@
         <property name="bAuthor" value="东野圭吾"/>
     </bean>
 
+    <bean id="order" class="com.kk.java.Order">
+        <constructor-arg name="oName" value="电脑"></constructor-arg>
+        <constructor-arg name="oAddress" value="中国"></constructor-arg>
+    </bean>
+
 </beans>
