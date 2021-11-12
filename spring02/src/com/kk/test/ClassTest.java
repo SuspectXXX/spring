@@ -1,6 +1,7 @@
 package com.kk.test;
 
 import com.kk.java.Book;
+import com.kk.java.City;
 import com.kk.java.Order;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -20,5 +21,12 @@ public class ClassTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Order order = context.getBean("order", Order.class);
         System.out.println(order);
+    }
+
+    @Test
+    public void test3() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        City city = context.getBean("city", City.class);
+        System.out.println(city);
     }
 }

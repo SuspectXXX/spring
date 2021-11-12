@@ -13,4 +13,13 @@
         <constructor-arg name="oAddress" value="中国"></constructor-arg>
     </bean>
 
+    <bean id="city" class="com.kk.java.City">
+        <property name="cName" value="&lt;上海&gt;"/>
+        <property name="cCode">
+            <value><![CDATA[<<200093>>]]></value>
+        </property>
+        <property name="cDescription">
+            <null />
+        </property>
+    </bean>
 </beans>
