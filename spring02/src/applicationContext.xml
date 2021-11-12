@@ -14,10 +14,13 @@
     </bean>
 
     <bean id="city" class="com.kk.java.City">
+        <!--使用转义字符-->
         <property name="cName" value="&lt;上海&gt;"/>
+        <!--使用CDATA显示特殊字符-->
         <property name="cCode">
             <value><![CDATA[<<200093>>]]></value>
         </property>
+        <!--null值注入-->
         <property name="cDescription">
             <null />
         </property>
