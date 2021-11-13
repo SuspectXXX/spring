@@ -1,5 +1,6 @@
 package com.kk.test;
 
+import com.kk.bean.Emp;
 import com.kk.java.Book;
 import com.kk.java.City;
 import com.kk.java.Order;
@@ -36,5 +37,12 @@ public class ClassTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
         CityService cityService = context.getBean("cityService", CityService.class);
         cityService.update();
+    }
+
+    @Test
+    public void test5() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
     }
 }
