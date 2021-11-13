@@ -3,6 +3,7 @@ package com.kk.test;
 import com.kk.java.Book;
 import com.kk.java.City;
 import com.kk.java.Order;
+import com.kk.service.CityService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -28,5 +29,12 @@ public class ClassTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         City city = context.getBean("city", City.class);
         System.out.println(city);
+    }
+
+    @Test
+    public void test4() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
+        CityService cityService = context.getBean("cityService", CityService.class);
+        cityService.update();
     }
 }
