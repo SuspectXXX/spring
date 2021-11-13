@@ -45,4 +45,11 @@ public class ClassTest {
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
     }
+
+    @Test
+    public void test6() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext4.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
+    }
 }

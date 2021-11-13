@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="com.kk.bean.Emp">
+        <property name="eName" value="kk"/>
+        <!--级联赋值-->
+        <!--需要先设置引用同时需要在类中加入该对象的getter方法以获取该对象，然后再级联复制-->
+        <property name="dept" ref="dept" />
+        <property name="dept.dName" value="虚拟化六部"/>
+    </bean>
+
+    <bean id="dept" class="com.kk.bean.Dept">
+        <!--该赋值对于级联赋值无效-->
+        <property name="dName" value="虚拟化部"/>
+    </bean>
+</beans>
