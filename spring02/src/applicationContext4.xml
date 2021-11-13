@@ -6,7 +6,7 @@
     <bean id="emp" class="com.kk.bean.Emp">
         <property name="eName" value="kk"/>
         <!--级联赋值-->
-        <!--需要先设置引用同时需要在类中加入该对象的getter方法以获取该对象，然后再级联复制-->
+        <!--需要先设置引用，同时需要在类中加入该对象的getter方法以获取该对象，然后再级联复制-->
         <property name="dept" ref="dept" />
         <property name="dept.dName" value="虚拟化六部"/>
     </bean>
