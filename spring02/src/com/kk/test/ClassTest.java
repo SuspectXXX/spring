@@ -1,6 +1,7 @@
 package com.kk.test;
 
 import com.kk.bean.Emp;
+import com.kk.bean.SimpleLifeCycleBean;
 import com.kk.java.Book;
 import com.kk.java.City;
 import com.kk.java.Order;
@@ -51,5 +52,12 @@ public class ClassTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext4.xml");
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
+    }
+    @Test
+    public void test7() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext5.xml");
+        SimpleLifeCycleBean scb = context.getBean("scb", SimpleLifeCycleBean.class);
+        System.out.println("4 = " + scb);
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }
