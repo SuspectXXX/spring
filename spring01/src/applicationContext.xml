@@ -3,6 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.kk.entity.User"></bean>
+    <bean id="user" class="com.kk.entity.Account"></bean>
+
+    <!--
+        class：指明要使用哪个工厂
+        factory-method：指明要使用哪个工厂方法，需要传参时使用constructor-arg标签
+    -->
+    <bean id="staticFactory" class="com.kk.entity.StaticFactory" factory-method="getStudent">
+        <constructor-arg name="sName" value="kk"></constructor-arg>
+        <constructor-arg name="sId" value="101"></constructor-arg>
+    </bean>
+
+    <bean id="nonStaticFactory" class="com.kk.entity.NonStaticFactory"></bean>
+    <!--
+        factory-bean：指定创建实例bean的实例工厂
+        factory-method：指定创建实例bean的实例方法，需要传参时使用constructor-arg标签
+    -->
+    <bean id="student" class="com.kk.entity.Student" factory-bean="nonStaticFactory" factory-method="getStudent">
+        <constructor-arg name="sName" value="kk"></constructor-arg>
+        <constructor-arg name="sId" value="202"></constructor-arg>
+    </bean>
 
 </beans>
